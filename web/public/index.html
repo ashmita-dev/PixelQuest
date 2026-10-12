@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pixel Quest</title>
+  <meta name="description" content="A neon arcade game you steer with a coloured object and your webcam. Colour segmentation and tracking run locally in your browser.">
+  <meta name="theme-color" content="#06041a">
+  <meta property="og:title" content="Pixel Quest">
+  <meta property="og:description" content="Webcam-controlled neon arcade game - classical image processing in the browser.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2306041a'/%3E%3Cpath d='M32 8 40 30 54 44 40 40 32 46 24 40 10 44 24 30Z' fill='%23102040' stroke='%2300f0ff' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Pixel Quest game. Press Enter to start; arrow keys move."></canvas>
+    <div id="loading">PIXEL QUEST<small>loading…</small></div>
+  </main>
+  <noscript><p class="noscript">Pixel Quest needs JavaScript enabled to run.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

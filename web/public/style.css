@@ -1,0 +1,61 @@
+:root {
+  --bg: #06041a;
+  --cyan: #00f0ff;
+  --violet: #9650ff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #120830 0%, var(--bg) 70%);
+  color: #ebf0ff;
+  font-family: "Bahnschrift", "Barlow Semi Condensed", "Segoe UI", system-ui, sans-serif;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+main {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+#game {
+  display: block;
+  touch-action: none;           /* drag-to-steer on touch screens */
+  border-radius: 6px;
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.15), 0 0 120px rgba(150, 80, 255, 0.12);
+  outline: none;
+  cursor: crosshair;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#loading {
+  position: absolute;
+  display: grid;
+  gap: 8px;
+  text-align: center;
+  font-size: clamp(32px, 7vw, 80px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 0 18px var(--cyan), 0 0 40px var(--violet);
+}
+
+#loading small {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cyan);
+  text-shadow: none;
+}
+
+.noscript {
+  position: fixed;
+  inset: auto 0 40% 0;
+  text-align: center;
+  font-size: 20px;
+}
