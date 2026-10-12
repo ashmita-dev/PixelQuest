@@ -2,6 +2,9 @@
 
 **A real-time webcam-controlled arcade game using image and video processing.**
 
+▶ **Play in your browser: https://ashmita-dev.github.io/PixelQuest/** (no install; webcam optional). The browser port lives in
+[`web/`](web/README.md); this page documents the original desktop Python/Pygame/OpenCV version.
+
 Hold a coloured object in front of your webcam and steer a neon spaceship through an asteroid field.
 Pixel Quest tracks the object with classical OpenCV techniques: HSV colour segmentation, morphological
 filtering, contour centroids, temporal smoothing and frame-to-frame motion estimation. It uses no deep learning

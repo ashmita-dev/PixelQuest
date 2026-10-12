@@ -1,0 +1,6 @@
+# Binary assets must never get line-ending conversion
+*.rgba binary
+*.png binary
+*.y4m binary
+*.docx binary
+*.pdf binary

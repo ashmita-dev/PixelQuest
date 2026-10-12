@@ -58,3 +58,19 @@ Done by the author: launch, green-marker tracking, ship following, keyboard cont
 3. Hide the marker and confirm `HOLDING` → `SEARCHING`.
 4. Unplug the camera, or open it in another app first, and confirm the game reports it and keeps running.
 5. Optionally run `scripts\calibrate_hsv.py`, tune, and press **S**.
+
+## Web version — 2026-10-13
+
+Live at **https://ashmita-dev.github.io/PixelQuest/** (GitHub Pages via Actions, HTTPS enforced). Code in `web/`, desktop version unchanged.
+
+| Check | Result |
+|---|---|
+| `cd web && npm test` (Node, vision + game rules incl. OpenCV cross-check fixtures) | 22 passed |
+| GitHub Actions `Deploy web version to GitHub Pages` | test + deploy succeeded |
+| `web/tests/e2e_browser.py` against the **live URL** (real Chrome, Playwright) | 29/29 passed |
+| Phone viewports 844×390 and 390×844, tap START | fits without scroll, game starts, no JS errors |
+| Python desktop suite | 65 passed (unchanged) |
+
+The e2e webcam checks use Chrome's fake camera playing the project's **synthetic** marker video, with permission granted or denied by the
+test harness. **Not yet verified:** the real browser permission prompt and tracking with a real webcam and physical marker on the live site,
+and browsers other than Chrome (Firefox, Safari, Edge) and real phones.
