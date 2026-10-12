@@ -13,7 +13,7 @@ from .audio import Audio
 from .effects import FloatingText, ParticleSystem, ScreenShake, Starfield, blit_glow, make_background
 from .player import Ship
 from .session import GameSession
-from .ui import Button, DiagnosticsView, draw_hud, draw_panel, draw_text, reset_caches
+from .ui import Button, DiagnosticsView, draw_hud, draw_panel, draw_text, font, reset_caches
 from .vision import (HSVRange, TrackerStatus, VisionSettings, VisionTracker, default_hsv_range,
                      save_hsv_range)
 
@@ -500,11 +500,17 @@ class Game:
                             math.pi / 2 + math.tau * self.dwell, 3)
 
     def _draw_toasts(self, surf) -> None:
-        y = self.h - 40
-        for text, col, life in reversed(self.toasts):
+        y = 118
+        for text, col, life in self.toasts:
             a = int(255 * min(1.0, life * 2))
-            img = draw_text(surf, text, 20, col, (self.w // 2, y), glow=False, alpha=a)
-            y -= img.height + 8
+            tw, th = font(20).size(text)
+            rect = pygame.Rect(0, 0, tw + 28, th + 12)
+            rect.center = (self.w // 2, y)
+            back = pygame.Surface(rect.size, pygame.SRCALPHA)
+            pygame.draw.rect(back, (6, 6, 24, int(a * 0.7)), back.get_rect(), border_radius=8)
+            surf.blit(back, rect)
+            draw_text(surf, text, 20, col, (self.w // 2, y), glow=False, alpha=a)
+            y += th + 16
 
     def _draw_play_overlays(self, surf) -> None:
         if self.ready > 0:

@@ -163,8 +163,9 @@ def draw_hud(surf, session, control_label: str, status: str, t: float, fps: floa
     pygame.draw.circle(surf, scol, (w - 168, 38), 6)
     blit_glow(surf, (w - 168, 38), 16, tuple(c // 2 for c in scol))
     draw_text(surf, status, 20, scol, (w - 20, 38), "midright", bold=True)
-    draw_text(surf, f"{fps:0.0f} FPS", 14, (80, 90, 130), (w - 20, surf.get_height() - 12),
-              "midright", glow=False)
+    if fps > 0:
+        draw_text(surf, f"{fps:0.0f} FPS", 14, (80, 90, 130), (w - 20, surf.get_height() - 12),
+                  "midright", glow=False)
 
 
 # --------------------------------------------------------------------------- diagnostics
