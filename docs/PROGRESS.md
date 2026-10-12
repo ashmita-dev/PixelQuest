@@ -1,9 +1,10 @@
 # Progress Log
 
-## Status — 2026-10-12
+## Status — 2026-10-13
 
 The game is playable, the vision pipeline is integrated, tests pass, the docs and report are written, and everything is pushed to GitHub.
-**Interactive webcam play with a physical marker has not yet been tested** (see "Remaining manual steps").
+**Manual webcam test (reported by the project author, 2026-10-13):** the game launched, webcam tracking worked, the ship followed a
+green marker, and keyboard controls worked. Other webcam features are still unverified (see "Remaining manual steps").
 
 ## Completed
 
@@ -38,7 +39,8 @@ The game is playable, the vision pipeline is integrated, tests pass, the docs an
 - **Automated, executed:** 65 pytest tests (see `docs/PROJECT_REPORT.md` §7.1).
 - **Synthetic-input tests:** all vision tests use generated frames, saved synthetic samples or `SyntheticSource`.
 - **Real webcam, executed:** device opens and delivers frames; background false-positive check without a marker; timing.
-- **Manual, still required (needs a person and a marker):** see below.
+- **Manual, performed by the author:** launch, webcam tracking with a green marker, ship following, keyboard controls (qualitative, reported by the author).
+- **Manual, not yet reported:** see below.
 
 ## Known issues / limitations
 
@@ -47,12 +49,12 @@ The game is playable, the vision pipeline is integrated, tests pass, the docs an
 - The diagnostics panel covers the right part of the play field while open.
 - End-to-end input latency has not been measured.
 
-## Remaining manual steps
+## Remaining manual steps (optional, not yet reported)
 
-1. `.venv\Scripts\python main.py`: hold a marker and confirm the status reads `TRACKING` and the ship follows smoothly.
-2. Press TAB and confirm the mask shows one blob. Try **H** presets and **K** sampling with your actual marker.
-3. Hover the marker over START until it triggers (gesture menu).
-4. Hide the marker and confirm `HOLDING` → `SEARCHING`, and that the arrow keys still work.
-5. Unplug the camera or block it in another app, and confirm the game reports it and keeps running.
-6. Optionally run `scripts\calibrate_hsv.py`, tune, and press **S**.
-7. Record what you observe here.
+Done by the author: launch, green-marker tracking, ship following, keyboard controls.
+
+1. Press TAB and confirm the MORPHOLOGY tile shows one blob. Try **H** presets and **K** sampling.
+2. Hover the marker over START until it triggers (gesture menu).
+3. Hide the marker and confirm `HOLDING` → `SEARCHING`.
+4. Unplug the camera, or open it in another app first, and confirm the game reports it and keeps running.
+5. Optionally run `scripts\calibrate_hsv.py`, tune, and press **S**.

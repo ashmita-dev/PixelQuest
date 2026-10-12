@@ -208,7 +208,7 @@ The suite (`tests/`, run with `python -m pytest -q`) contains **65 tests, all pa
 | Game logic | scoring, combo, collisions, invulnerability, game over, shield smash, levels, spawning, bounds, keyboard override | Headless session |
 | Application | headless start-up, menu→play→pause→menu, game over and restart, diagnostics toggle, webcam failure → keyboard | Headless Pygame |
 
-On the synthetic sequence, the tracked centroid stayed within 0.01 (normalised) of the generated position on all 60 frames.
+On 60 frames of the `SyntheticSource` test video, the tracked centroid stayed within 0.01 (normalised) of the generated position.
 These synthetic results show the code behaves as designed. They do **not** measure real-world tracking accuracy.
 
 ### 7.2 Headless runs of the full game (executed)
@@ -225,16 +225,21 @@ synthetic camera, diagnostics on and the autopilot (900 frames). The screenshots
   informal observation, in one room, motivates the advice to check diagnostics and choose a colour absent from the background.
 - Pipeline time was about 1.2 ms per frame (320×240, diagnostics extras off).
 
-### 7.4 Still to be verified manually
+### 7.4 Manual webcam gameplay test (performed by the project author)
 
-Interactive play with a physical marker (tracking stability, perceived lag, gesture menu, live K calibration and the slider
-calibrator window) requires a person in front of the camera. It was not performed by the automated process and must be checked manually
-using `docs/DEMO_GUIDE.md`.
+The project author ran `.venv\Scripts\python main.py` on their Windows laptop with a physical green marker and reported:
+the game launched, webcam tracking worked, the spaceship followed the green marker, and keyboard controls worked.
+This was a qualitative check by a person, not an automated or quantitative measurement. No accuracy or latency figures were recorded.
+
+Not covered by that report, and therefore not verified: the gesture (hover) menu, live K calibration, the TAB diagnostics on real
+footage, the HOLDING/SEARCHING behaviour when the marker is hidden, camera unplug handling on real hardware, and the slider
+calibrator window (`scripts/calibrate_hsv.py`).
 
 ## 8. Screenshots
 
 The following are real renders of the application. The diagnostics panel is fed by the project's synthetic test video
 (`--camera synthetic`), and gameplay is flown by the demo autopilot, so that the screenshots could be produced without a person at the camera.
+They are **not** captures of the author's manual webcam test (§7.4).
 
 ![Figure 3 – Title screen](images/screen_menu.png)
 
