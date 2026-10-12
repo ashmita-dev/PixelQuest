@@ -75,17 +75,18 @@ class HSVRange:
         return f"{self.name}: H{h0}-{h1} S{s0}-{s1} V{v0}-{v1}"
 
 
-def load_hsv_range(path: Path = config.HSV_CONFIG_FILE) -> Optional[HSVRange]:
+def load_hsv_range(path: Optional[Path] = None) -> Optional[HSVRange]:
     """Load a user-calibrated range, returning None if absent or invalid."""
     try:
-        return HSVRange.from_dict(json.loads(Path(path).read_text(encoding="utf-8")))
+        path = Path(path or config.HSV_CONFIG_FILE)
+        return HSVRange.from_dict(json.loads(path.read_text(encoding="utf-8")))
     except (OSError, ValueError, KeyError, TypeError):
         return None
 
 
-def save_hsv_range(rng: HSVRange, path: Path = config.HSV_CONFIG_FILE) -> bool:
+def save_hsv_range(rng: HSVRange, path: Optional[Path] = None) -> bool:
     try:
-        Path(path).write_text(json.dumps(rng.to_dict(), indent=2), encoding="utf-8")
+        Path(path or config.HSV_CONFIG_FILE).write_text(json.dumps(rng.to_dict(), indent=2), encoding="utf-8")
         return True
     except OSError:
         return False

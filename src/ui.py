@@ -46,6 +46,12 @@ def text_surface(text: str, size: int, colour: tuple, glow: bool = True,
     return out
 
 
+def reset_caches() -> None:
+    """Font objects die with pygame.quit(); call this whenever pygame restarts."""
+    font.cache_clear()
+    text_surface.cache_clear()
+
+
 def draw_text(surf, text, size, colour, pos, anchor="center", glow=True, bold=False,
               alpha: Optional[int] = None) -> pygame.Rect:
     img = text_surface(str(text), size, tuple(colour), glow, bold)

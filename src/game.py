@@ -13,7 +13,7 @@ from .audio import Audio
 from .effects import FloatingText, ParticleSystem, ScreenShake, Starfield, blit_glow, make_background
 from .player import Ship
 from .session import GameSession
-from .ui import Button, DiagnosticsView, draw_hud, draw_panel, draw_text
+from .ui import Button, DiagnosticsView, draw_hud, draw_panel, draw_text, reset_caches
 from .vision import (HSVRange, TrackerStatus, VisionSettings, VisionTracker, default_hsv_range,
                      save_hsv_range)
 
@@ -78,6 +78,7 @@ class Game:
     def __init__(self, args):
         self.args = args
         pygame.init()
+        reset_caches()
         flags = pygame.SCALED | pygame.RESIZABLE
         if getattr(args, "fullscreen", False):
             flags |= pygame.FULLSCREEN
@@ -613,5 +614,6 @@ class Game:
                 pygame.image.save(self.screen, screenshot)
         finally:
             self.tracker.stop()
+            reset_caches()
             pygame.quit()
         return frame
