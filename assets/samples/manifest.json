@@ -1,0 +1,255 @@
+[
+  {
+    "file": "synthetic_green_centre.png",
+    "synthetic": true,
+    "seed": 1,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      320,
+      240
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "green disc, centre",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "synthetic_green_left.png",
+    "synthetic": true,
+    "seed": 2,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      140,
+      160
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "green disc, upper left",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "synthetic_red_right.png",
+    "synthetic": true,
+    "seed": 3,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      500,
+      200
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 178,
+    "description": "red disc (hue wraps 180), right",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "synthetic_blue_low.png",
+    "synthetic": true,
+    "seed": 4,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      330,
+      400
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 110,
+    "description": "blue disc, bottom",
+    "marker_selected_expected": false,
+    "note": "Limitation demo: the blue distractor box is larger than the blue marker, so the largest-blob rule selects the box instead of the marker."
+  },
+  {
+    "file": "synthetic_no_marker.png",
+    "synthetic": true,
+    "seed": 5,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": null,
+    "marker_radius_px": null,
+    "marker_hue": null,
+    "description": "no marker, distractors only",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_00.png",
+    "synthetic": true,
+    "seed": 100,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      120,
+      240
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_01.png",
+    "synthetic": true,
+    "seed": 101,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      160,
+      259
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_02.png",
+    "synthetic": true,
+    "seed": 102,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      200,
+      277
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_03.png",
+    "synthetic": true,
+    "seed": 103,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      240,
+      290
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_04.png",
+    "synthetic": true,
+    "seed": 104,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      280,
+      298
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_05.png",
+    "synthetic": true,
+    "seed": 105,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      320,
+      299
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_06.png",
+    "synthetic": true,
+    "seed": 106,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      360,
+      294
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_07.png",
+    "synthetic": true,
+    "seed": 107,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      400,
+      283
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_08.png",
+    "synthetic": true,
+    "seed": 108,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      440,
+      267
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  },
+  {
+    "file": "sequence/frame_09.png",
+    "synthetic": true,
+    "seed": 109,
+    "size": [
+      640,
+      480
+    ],
+    "marker_centre_px": [
+      480,
+      248
+    ],
+    "marker_radius_px": 40,
+    "marker_hue": 60,
+    "description": "moving green disc sequence",
+    "marker_selected_expected": true
+  }
+]
